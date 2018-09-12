@@ -1,0 +1,14 @@
+<div class="alert alert-danger" [hidden]="!f.valid">
+	There was a problem logging in. Please try again.
+</div>
+<form role="form" #f (submit)="login()">
+	<div class="form-group">
+		<label for="username">Usuario:</label>
+		<input type="text" class="form-control" id="email" name="email" [(ngModel)]="usuario.email" required/>
+	</div>
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha" required/>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>

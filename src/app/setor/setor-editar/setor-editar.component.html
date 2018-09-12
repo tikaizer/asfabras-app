@@ -1,0 +1,43 @@
+<p-confirmDialog></p-confirmDialog>
+
+<div class="container">
+    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Voltar" icon="pi pi-angle-double-left" (click)="goConsulta();"></button>
+    <hr>
+
+    <p-fieldset legend="{{titulo}}">
+
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+            <span class="ui-float-label">
+                <input id="descricao" type="text" class="form-group col-sm-12" [(ngModel)]="setor.setor" pInputText required>
+                <label for="descricao">Descriçao</label>
+            </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-2 ui-fluid">
+            <button type="button" pButton (click)="showConfirm();" label="{{botao}}" class="ui-button-success ui-button-raised ui-button-rounded"></button>
+
+            <!--teste do objeto toast-->
+            <p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+                <ng-template let-message pTemplate="message">
+                    <div style="text-align: center">
+                        <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+                        <h3>{{message.summary}}</h3>
+                        <p>{{message.detail}}</p>
+                    </div>
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-6">
+                            <button type="button" pButton (click)="onConfirm()" label="Sim" class="ui-button-success"></button>
+                        </div>
+                        <div class="ui-g-6">
+                            <button type="button" pButton (click)="onReject()" label="Não" class="ui-button-secondary"></button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-toast>
+        </div>
+
+
+
+    </p-fieldset>
+</div>

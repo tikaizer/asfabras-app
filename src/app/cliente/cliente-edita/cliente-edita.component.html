@@ -1,0 +1,101 @@
+<div class="container">
+        <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Voltar" icon="pi pi-angle-double-left" (click)="goConsulta();"></button>
+        <hr>
+        <p-fieldset legend="{{titulo}}">
+                <div class="ui-g">
+                        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="nome" type="text" class="form-group" [(ngModel)]="cliente.cliente" pInputText required>
+                                        <label for="nome">Cliente</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="email" type="email" class="form-group" [(ngModel)]="cliente.email" pInputText required>
+                                        <label for="email">Email</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-3 ui-fluid">
+                                <span class="ui-float-label">
+                                        <p-inputMask id="cnpj" [(ngModel)]="cliente.cnpj" class="form-group" class="form-group" mask="99.999.999/9999-99" required></p-inputMask>
+                                        <label for="cnpj">Cnpj</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-3 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="ie" type="text" class="form-group" class="form-group" [(ngModel)]="cliente.ie" pInputText required>
+                                        <label for="ie">IE</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-3 ui-fluid">
+                                <span class="ui-float-label">
+                                        <p-inputMask id="telefone1" [(ngModel)]="cliente.telefone1" class="form-group" mask="(99) 9999-9999" required></p-inputMask>
+                                        <label for="telefone1">Telefone</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-3 ui-fluid">
+                                <span class="ui-float-label">
+                                        <p-inputMask id="telefone2" [(ngModel)]="cliente.telefone2" class="form-group" mask="(99) 99999-9999" required></p-inputMask>
+                                        <label for="telefone2">Celular</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+                                <span class="ui-float-label">
+                                        <p-inputMask id="cep" [(ngModel)]="cliente.cep" class="form-group" mask="99.999-999" required></p-inputMask>
+                                        <label for="cep">Cep</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-8 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="endereco" type="text" class="form-group" [(ngModel)]="cliente.endereco" pInputText required>
+                                        <label for="endereco">Endereço</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="numero" type="number" class="form-group" [(ngModel)]="cliente.numero" pInputText required>
+                                        <label for="numero">Numero</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-5 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="cidade" type="text" class="form-group" [(ngModel)]="cliente.endereco" pInputText required>
+                                        <label for="cidade">Cidade</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-5 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="bairro" type="text" class="form-group" [(ngModel)]="cliente.bairro" pInputText required>
+                                        <label for="bairro">Bairro</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+                                <span class="ui-float-label">
+                                        <input id="uf" type="text" class="form-group" [(ngModel)]="cliente.uf" pInputText required>
+                                        <label for="uf">UF</label>
+                                </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-12 ui-lg-2 ui-fluid">
+                                <button type="button" pButton (click)=" showConfirm();" label="{{botao}}" class="ui-button-success ui-button-raised ui-button-rounded"></button>
+                                <!--teste do objeto toast-->
+                                <p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+                                        <ng-template let-message pTemplate="message">
+                                                <div style="text-align: center">
+                                                        <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+                                                        <h3>{{message.summary}}</h3>
+                                                        <p>{{message.detail}}</p>
+                                                </div>
+                                                <div class="ui-g ui-fluid">
+                                                        <div class="ui-g-6">
+                                                                <button type="button" pButton (click)="onConfirm()" label="Sim" class="ui-button-success"></button>
+                                                        </div>
+                                                        <div class="ui-g-6">
+                                                                <button type="button" pButton (click)="onReject()" label="Não" class="ui-button-secondary"></button>
+                                                        </div>
+                                                </div>
+                                        </ng-template>
+                                </p-toast>
+                        </div>
+                </div>
+        </p-fieldset>
+</div>

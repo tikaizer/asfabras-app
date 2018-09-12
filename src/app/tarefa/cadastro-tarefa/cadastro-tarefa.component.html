@@ -1,0 +1,19 @@
+<div class="container">
+    <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Voltar" icon="pi pi-angle-double-left" (click)="goConsulta();"></button>
+    <hr>
+    <p-fieldset legend="{{titulo}}">
+
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+            <span class="ui-float-label">
+                <input id="nome" type="text" class="form-group col-sm-12" [(ngModel)]="tarefa.descricao" pInputText required>
+                <label for="nome">Nome</label>
+            </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-lg-2 ui-fluid">
+            <button type="button" pButton (click)="salvar();" label="{{botao}}" class="ui-button-success ui-button-raised ui-button-rounded"></button>
+        </div>
+
+    </p-fieldset>
+</div>
